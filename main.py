@@ -13,7 +13,26 @@ def Text2Pdf(filename):
     f=open(filename,'r')
     # writing content to pdf
     for x in f:
-        pdf.cell(200,10,txt=x,ln=1,align='c')
+        start = 0
+        line = 1
+        incrementBy = 110
+        # write 110 characters in one line starting from index start
+        # start + incrementBy is the upper bound 
+        while (start + incrementBy) < len(x):
+            # extracting next 110 characters
+            text = x[start:start+incrementBy]
+            # writing the 110 characters in a line
+            pdf.cell(200,10,txt=text,ln=line,align='l')
+            start += incrementBy    # increment the index 
+            line += 1   # increment line number
+        
+
+        # if some characters are left at last, then write them too
+        if len(x) - (start + incrementBy) > 0:
+            text = x[start:len(x)]
+            pdf.cell(200,10,txt=text,ln=line,align='l')
+        
+    
     # pdf file saved
     pdf.output(filename.replace(".txt",".pdf"))
 
