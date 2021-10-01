@@ -15,4 +15,4 @@ cd any-to-pdf/
 ```
 python main.py
 ```
->Enter filename then and Conversion done!
+>Enter filename(relative path) then and Conversion done!
