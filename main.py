@@ -12,8 +12,26 @@ def Text2Pdf(filename):
     
     f=open(filename,'r')
     # writing content to pdf
-    for x in f:
-        pdf.cell(200,10,txt=x,ln=1,align='c')
+    lineNo = 1        # write at this line number
+    
+    for line in f:         # for each line
+        listOfWords = list(line.split())      # split the line into list of words
+
+        indx = 0
+        upperBnd = 15
+        while indx + upperBnd < len(listOfWords):
+            # itr1: first 15 words, itr2: next 15 words, itr3: next 15 words and so on..
+            string = ' '.join(listOfWords[indx : indx + upperBnd])
+            pdf.cell(200,10,txt=string,ln=1,align='L')
+            
+            indx += upperBnd       # then update the start index to reach next 15 words in another iteration
+
+        # if some words are left, then write them too
+        if len(listOfWords) - indx > 1:
+            string = ' '.join(listOfWords[indx : len(listOfWords)])
+            print(string)
+            pdf.cell(200,10,txt=string,ln=1,align='L')
+
     # pdf file saved
     pdf.output(filename.replace(".txt",".pdf"))
 
