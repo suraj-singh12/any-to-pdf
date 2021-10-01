@@ -53,6 +53,7 @@ def Text2Pdf(filename):
 def Ppt2Pdf(filename):
     # executing the command, conversion done !!
     output_filename = generateOutputFilename(filename)
+    filename = os.path.join(os.getcwd(), filename)
     ppt_processor.convert(filename, output_filename)
     print("[+] Saved at:", output_filename)
 
