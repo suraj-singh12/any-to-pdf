@@ -10,7 +10,7 @@ from PIL import Image
 
 
 def generateOutputFilename(filename: str, dest: str) -> str:
-    filename = os.path.join(dest, filename)
+    filename = os.path.join(dest, os.path.split(filename)[-1])
     output = os.path.splitext(filename)
     return os.path.abspath(output[0] + ".pdf")
 
@@ -66,7 +66,7 @@ def Excel2Pdf(filename: str, dest: str) -> str:
     # creating new filename with .pdf extension to save resulting file in current dir
     new_file_name = generateOutputFilename(filename, dest)
     # converting to pdf file
-    work_sheets.ExportAsFixedFormat(0, os.path.abspath(new_file_name))
+    work_sheets.ExportAsFixedFormat(0, new_file_name)
     return new_file_name
 
 
