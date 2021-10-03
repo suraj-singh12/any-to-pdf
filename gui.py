@@ -1,5 +1,6 @@
 import os
 import threading
+from tkinter.constants import RIGHT
 from typing import List
 from main import main as convert_to_pdf
 
@@ -56,8 +57,14 @@ class Ui(tk.Frame):
         convert = tk.Button(self, text="Convert", command=self.convert)
         convert.grid(column=1, row=2, sticky="E", **common_args)
 
-        quit = tk.Button(self, text="Quit", command=self.master.destroy)
-        quit.grid(column=0, row=3, sticky="E", columnspan=2, **common_args)
+        frame = tk.Frame(self)
+        frame.grid(column=0, row=3, sticky="E", columnspan=2)
+
+        quit = tk.Button(frame, text="Quit", command=self.master.destroy)
+        quit.pack(side=RIGHT, **common_args)
+
+        about = tk.Button(frame, text="About", command=lambda: Dialog(tk.Tk()))
+        about.pack(side=RIGHT, **common_args)
 
     def open_file(self):
         self.selected_files = list(filedialog.askopenfilenames())
@@ -81,6 +88,15 @@ class Ui(tk.Frame):
 
         threading.Thread(target=_convert).start()
 
+
+class Dialog(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.selected_files = []
+
+        self.master.title("About")
+        self.master = master
+        self.pack()
 
 root = tk.Tk()
 app = Ui(master=root)
