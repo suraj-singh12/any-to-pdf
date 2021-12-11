@@ -1,6 +1,28 @@
 # any-to-pdf
 This is a tool that converts `txt`, `docx`, `pptx` and `excel` files to `pdf` files with ease.
 
+## Dependencies
+
+```bash
+  pip install docx2pdf
+```
+```bash
+  pip install ppt2pdf
+```
+```bash
+  pip install fpdf
+```
+```bash
+  pip install Pillow
+```
+```bash
+  pip install img2pdf
+```
+```bash
+  pip install pywin32
+```
+
+
 ## Usage
 
 First clone the repository to your system
