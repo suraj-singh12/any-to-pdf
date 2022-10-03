@@ -5,7 +5,7 @@ This is a tool that converts `txt`, `docx`, `pptx` and `excel` files to `pdf` fi
 ## Dependencies
 
 ```sh
-  pip install docx2pdf ppt2pdf fpdf Pillow img2pdf pywin32
+  pip install -r requirements.txt
 ```
 
 ## Usage
