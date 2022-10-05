@@ -8,6 +8,8 @@ from main import main as convert_to_pdf
 import tkinter as tk
 import tkinter.ttk as ttk
 import tkinter.filedialog as filedialog
+import sv_ttk
+
 
 common_args = {"padx": 8, "pady": 8}
 
@@ -110,4 +112,5 @@ class Dialog(tk.Frame):
 
 root = tk.Tk()
 app = Ui(master=root)
+sv_ttk.set_theme("dark")
 app.mainloop()
