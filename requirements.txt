@@ -4,3 +4,4 @@ fpdf
 Pillow
 img2pdf
 pywin32
+sv_ttk

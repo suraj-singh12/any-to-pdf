@@ -12,7 +12,7 @@ from PIL import Image
 def generateOutputFilename(filename: str, dest: str) -> str:
     filename = os.path.join(dest, os.path.split(filename)[-1])
     output = os.path.splitext(filename)
-    return os.path.abspath(output[0] + ".pdf")
+    return os.path.abspath(f"{output[0]}.pdf")
 
 
 def Text2Pdf(filename: str, dest: str) -> str:
