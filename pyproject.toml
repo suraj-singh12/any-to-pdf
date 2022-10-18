@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "any-to-pdf"
+version = "0.1.0"
+description = "This is a tool that converts txt, docx, pptx and excel files to pdf files with ease."
+authors = ["glitchdawg <shivavayuputra8512@gmail.com>"]
+readme = "README.md"
+packages = [{include = "any_to_pdf"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+docx2pdf = "^0.1.8"
+ppt2pdf = "^0.0.3"
+fpdf = "^1.7.2"
+pillow = "^9.2.0"
+img2pdf = "^0.4.4"
+pywin32 = "^304"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
