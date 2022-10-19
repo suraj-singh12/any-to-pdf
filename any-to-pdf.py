@@ -37,7 +37,10 @@ class GuiStart(QMainWindow):
         self.input_path = str(self.fname[0])
         self.output_path = str("/".join(self.fname[0].split("/")[:-1]))
 
-    
+    def browseDir(self):
+        self.dir_name = QFileDialog.getExistingDirectory(self, "Open Folder")
+        self.appUI.outputPath.setText(str(self.dir_name))
+        self.output_path = str(self.dir_name)
         
 
 
