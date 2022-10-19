@@ -59,7 +59,7 @@ class GuiStart(QMainWindow):
             self.msg = QMessageBox()
             self.msg.setIcon(QMessageBox.Critical)
             self.msg.setWindowTitle("Error Occured!")
-            self.msg.setText(f"There was an error saving the PDF file.")
+            self.msg.setText(f"There was an error converting the file.")
             self.msg.exec_()
 
 
