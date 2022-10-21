@@ -108,6 +108,8 @@ def main(filename: str, dest: str = os.getcwd()) -> str:
         return Excel2Pdf(filename, dest)
     elif any(filename.endswith(ext) for ext in ["jpg", "png", "bmp"]):
         return Image2Pdf(filename, dest)
+    else:
+        raise Exception("Can not convert.")
 
 
 if __name__ == "__main__":

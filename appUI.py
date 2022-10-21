@@ -40,6 +40,8 @@ class Ui_mainWindow(object):
                                   "align:center;")
         self.tittle.setObjectName("tittle")
         self.inputPath = QtWidgets.QLineEdit(self.centralwidget)
+        self.inputPath.setStyleSheet("color:white;\n"
+                                     "font: 75 8pt \"MS Shell Dlg 2\";\n")
         self.inputPath.setGeometry(QtCore.QRect(160, 200, 381, 45))
         self.inputPath.setObjectName("inputPath")
         self.browse1 = QtWidgets.QPushButton(self.centralwidget)
@@ -50,6 +52,8 @@ class Ui_mainWindow(object):
         self.outputPath = QtWidgets.QLineEdit(self.centralwidget)
         self.outputPath.setGeometry(QtCore.QRect(160, 320, 381, 45))
         self.outputPath.setObjectName("outputPath")
+        self.outputPath.setStyleSheet("color:white;\n"
+                                     "font: 75 8pt \"MS Shell Dlg 2\";\n")
         self.browse2 = QtWidgets.QPushButton(self.centralwidget)
         self.browse2.setGeometry(QtCore.QRect(550, 320, 100, 45))
         self.browse2.setStyleSheet("background-color: rgb(196, 196, 196);\n"
